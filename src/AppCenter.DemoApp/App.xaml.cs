@@ -44,7 +44,7 @@ namespace AppCenter.DemoApp
             // https://docs.microsoft.com/en-us/mobile-center/sdk/push/xamarin-forms
             Push.PushNotificationReceived += OnPushNotificationReceived;
             // Handle when your app starts
-            AppCenter.Start(AppConstants.AppCenterStart,
+            Microsoft.AppCenter.AppCenter.Start(AppConstants.AppCenterStart,
                                typeof(Analytics), typeof(Crashes), typeof(Distribute), typeof(Push));
         }
 
