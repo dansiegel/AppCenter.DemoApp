@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+    <OutputType>Library</OutputType>
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System" />
+    <PackageReference Include="NUnit" Version="2.6.*" />
+    <PackageReference Include="Xamarin.UITest" Version="2.*" />
+  </ItemGroup>
+
+</Project>
