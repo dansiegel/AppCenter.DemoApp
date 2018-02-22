@@ -9,7 +9,7 @@ namespace AppCenter.DemoApp.UITests.Tests
 {
     public class MainPageTests : AbstractSetup
     {
-        public Tests(Platform platform)
+        public MainPageTests(Platform platform)
             : base(platform)
         {
         }
