@@ -190,5 +190,6 @@
       <Name>AppCenter.DemoApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="$(MobileBuildToolsTargets)" Condition="Exists('$(MobileBuildToolsTargets)')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

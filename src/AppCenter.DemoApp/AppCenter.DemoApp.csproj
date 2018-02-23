@@ -32,4 +32,6 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <Import Project="$(MobileBuildToolsTargets)" Condition="Exists('$(MobileBuildToolsTargets)')" />
+
 </Project>
