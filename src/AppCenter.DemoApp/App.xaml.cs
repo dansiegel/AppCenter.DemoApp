@@ -129,7 +129,7 @@ namespace AppCenter.DemoApp
         {
             TaskScheduler.UnobservedTaskException += (sender, e) =>
             {
-                Container.Resolve<ILoggerFacade>().Log(e.Exception);
+                Container.Resolve<ILoggerFacade>().Log(e.Exception.ToString(), Category.Exception, Priority.High);
             };
         }
 
@@ -153,7 +153,7 @@ namespace AppCenter.DemoApp
 
             // Send the notification summary to debug output
             System.Diagnostics.Debug.WriteLine(summary);
-            Container.Resolve<ILoggerFacade>().Log(summary);
+            Container.Resolve<ILoggerFacade>().Log(summary, Category.Debug, Priority.None);
         }
 
         private bool OnReleaseAvailable(ReleaseDetails releaseDetails)
