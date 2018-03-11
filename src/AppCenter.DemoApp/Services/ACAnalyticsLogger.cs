@@ -6,7 +6,7 @@ using Prism.Logging;
 
 namespace AppCenter.DemoApp.Services
 {
-    public class MCAnalyticsLogger : ILoggerFacade, IMiniLogger
+    public class ACAnalyticsLogger : ILoggerFacade, IMiniLogger
     {
         public void Debug(string message)
         {

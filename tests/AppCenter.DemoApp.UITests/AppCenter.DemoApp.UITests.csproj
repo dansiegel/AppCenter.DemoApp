@@ -8,8 +8,8 @@
 
   <ItemGroup>
     <Reference Include="System" />
-    <PackageReference Include="NUnit" Version="2.6.*" />
-    <PackageReference Include="Xamarin.UITest" Version="2.*" />
+    <PackageReference Include="NUnit" Version="2.6.4" />
+    <PackageReference Include="Xamarin.UITest" Version="2.2.3" />
   </ItemGroup>
 
 </Project>

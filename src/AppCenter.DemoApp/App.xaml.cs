@@ -46,6 +46,7 @@ namespace AppCenter.DemoApp
             // Handle when your app starts
             Microsoft.AppCenter.AppCenter.Start(AppConstants.AppCenterStart,
                                typeof(Analytics), typeof(Crashes), typeof(Distribute), typeof(Push));
+            Container.Resolve<ILoggerFacade>().Log("Started AppCenter", Category.Info, Priority.Low);
         }
 
         protected override async void OnInitialized()
@@ -118,9 +119,9 @@ namespace AppCenter.DemoApp
             return new DebugLogger();
         }
 
-        private MCAnalyticsLogger CreateAppCenterLogger()
+        private ACAnalyticsLogger CreateAppCenterLogger()
         {
-            var logger = new MCAnalyticsLogger();
+            var logger = new ACAnalyticsLogger();
             FFImageLoading.ImageService.Instance.Config.Logger = (IMiniLogger)logger;
             return logger;
         }
