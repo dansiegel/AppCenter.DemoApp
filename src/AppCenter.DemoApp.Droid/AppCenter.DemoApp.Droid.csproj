@@ -26,6 +26,7 @@
     <JavaMaximumHeapSize />
     <JavaOptions />
     <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <AutomaticVersionBehavior>PreferBuildNumber</AutomaticVersionBehavior>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -66,7 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.0.0.396" />
-    <PackageReference Include="Prism.Plugin.Popups" Version="2.0.0-pre4" />
+    <PackageReference Include="Prism.Plugin.Popups" Version="2.0.0-pre6" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.4" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.4" />
     <PackageReference Include="Prism.QuickStart.MFractor.Config" Version="1.0.3" PrivateAssets="all" />
@@ -93,9 +94,7 @@
     <PackageReference Include="PropertyChanged.Fody">
       <Version>2.2.9</Version>
     </PackageReference>
-    <PackageReference Include="Mobile.BuildTools">
-      <Version>1.0.11</Version>
-    </PackageReference>
+    <PackageReference Include="Mobile.BuildTools" Version="1.0.12.513-pre" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

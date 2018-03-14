@@ -13,6 +13,7 @@
     <AssemblyName>AppCenter.DemoApp.iOS</AssemblyName>
     <NuGetPackageImportStamp></NuGetPackageImportStamp>
     <BuildIpa>True</BuildIpa>
+    <AutomaticVersionBehavior>PreferBuildNumber</AutomaticVersionBehavior>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -171,7 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.0.0.396" />
-    <PackageReference Include="Prism.Plugin.Popups" Version="2.0.0-pre4" />
+    <PackageReference Include="Prism.Plugin.Popups" Version="2.0.0-pre6" />
     <PackageReference Include="Xamarin.TestCloud.Agent" Version="0.21.4" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.4" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.4" />
@@ -194,9 +195,7 @@
     <PackageReference Include="PropertyChanged.Fody">
       <Version>2.2.9</Version>
     </PackageReference>
-    <PackageReference Include="Mobile.BuildTools">
-      <Version>1.0.11</Version>
-    </PackageReference>
+    <PackageReference Include="Mobile.BuildTools" Version="1.0.12.513-pre" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppCenter.DemoApp\AppCenter.DemoApp.csproj">

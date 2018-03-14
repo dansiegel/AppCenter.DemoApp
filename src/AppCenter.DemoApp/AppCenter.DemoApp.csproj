@@ -8,19 +8,19 @@
 
   <ItemGroup>
     <PackageReference Include="Prism.DryIoc.Forms" Version="7.0.0.396" />
-    <PackageReference Include="Prism.Plugin.Popups" Version="2.0.0-pre4" />
+    <PackageReference Include="Prism.Plugin.Popups" Version="2.0.0-pre6" />
     <PackageReference Include="Plugin.Multilingual" Version="1.0.2" />
     <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.3.4" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.3.4" />
     <PackageReference Include="Prism.QuickStart.MFractor.Config" Version="1.0.3" PrivateAssets="all" />
-    <PackageReference Include="LiveXAML" Version="2.1.19" />
+    <PackageReference Include="LiveXAML" Version="2.1.22" />
     <PackageReference Include="Xamarin.Forms" Version="2.5.0.280555" />
     <PackageReference Include="Microsoft.AppCenter.Analytics" Version="1.5.0" />
     <PackageReference Include="Microsoft.AppCenter.Crashes" Version="1.5.0" />
     <PackageReference Include="Microsoft.AppCenter.Distribute" Version="1.5.0" />
     <PackageReference Include="Microsoft.AppCenter.Push" Version="1.5.0" />
     <PackageReference Include="PropertyChanged.Fody" Version="2.2.9" />
-    <PackageReference Include="Mobile.BuildTools" Version="1.0.11" />
+    <PackageReference Include="Mobile.BuildTools" Version="1.0.12.513-pre" />
   </ItemGroup>
 
   <ItemGroup>
