@@ -94,7 +94,7 @@
     <PackageReference Include="PropertyChanged.Fody">
       <Version>2.2.9</Version>
     </PackageReference>
-    <PackageReference Include="Mobile.BuildTools" Version="1.0.12.515-pre" />
+    <PackageReference Include="Mobile.BuildTools" Version="1.0.12.519" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
