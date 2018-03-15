@@ -195,7 +195,7 @@
     <PackageReference Include="PropertyChanged.Fody">
       <Version>2.2.9</Version>
     </PackageReference>
-    <PackageReference Include="Mobile.BuildTools" Version="1.0.12.513-pre" />
+    <PackageReference Include="Mobile.BuildTools" Version="1.0.12.515-pre" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppCenter.DemoApp\AppCenter.DemoApp.csproj">
