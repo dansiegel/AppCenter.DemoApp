@@ -2,7 +2,12 @@
 
 This project was created using the Prism Template Studio & Developer Toolkit by Dan Siegel. Be sure to follow Dan on Twitter [@DanJSiegel](https://twitter.com/DanJSiegel). This app is meant as a demo to show how to secure your application code. You will notice that there is no `Info.plist` or `AndroidManifest.xml` in the iOS and Android projects. Both of these files instead exist as tokenized templates in the build folder. There are also no hard coded values for the AppCenter application secrets.
 
-The [Mobile.BuildTools](https://github.com/dansiegel/Mobile.BuildTools) is able to handle these tasks easily for you. This project is using all of the defaults, however it is all configurable and customizable to allow you to inject secrets at build across multiple projects in a single solution, enable debugging output, and more. 
+The [Mobile.BuildTools](https://github.com/dansiegel/Mobile.BuildTools) is able to handle these tasks easily for you. This project is using all of the defaults, however it is all configurable and customizable to allow you to inject secrets at build across multiple projects in a single solution, enable debugging output, and more.
+
+| Platform | Status |
+| -------- | ------ |
+| Android | [![Build status](https://build.appcenter.ms/v0.1/apps/42cfd2b5-1201-4076-a79c-fe008f4a99a1/branches/master/badge)](https://appcenter.ms) |
+| iOS | [![Build status](https://build.appcenter.ms/v0.1/apps/1d5cefb9-a030-4292-84d0-3d22b5bef813/branches/master/badge)](https://appcenter.ms) |
 
 ## Getting the application to build locally
 
