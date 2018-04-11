@@ -33,7 +33,7 @@ namespace AppCenter.DemoApp.ViewModels
 
         public bool IsBusy { get; set; }
 
-        public bool IsNotBusy { get; set; }
+        public bool IsNotBusy { get; set; } = true;
 
         public bool CanLoadMore { get; set; }
 
