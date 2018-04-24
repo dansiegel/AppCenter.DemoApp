@@ -13,7 +13,7 @@ namespace AppCenter.DemoApp.ViewModels
         {
         }
 
-        public override async void OnNavigatedTo(NavigationParameters parameters)
+        public override async void OnNavigatedTo(INavigationParameters parameters)
         {
             // TODO: Implement any initialization logic you need here. Example would be to handle automatic user login
 

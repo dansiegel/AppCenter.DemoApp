@@ -20,17 +20,17 @@ namespace AppCenter.DemoApp.ViewModels
             Title = AppResources.MainPageTitle;
         }
 
-        public override void OnNavigatingTo(NavigationParameters parameters)
+        public override void OnNavigatingTo(INavigationParameters parameters)
         {
             // TODO: Implement your initialization logic
         }
 
-        public override void OnNavigatedFrom(NavigationParameters parameters)
+        public override void OnNavigatedFrom(INavigationParameters parameters)
         {
             // TODO: Handle any final tasks before you navigate away
         }
 
-        public override void OnNavigatedTo(NavigationParameters parameters)
+        public override void OnNavigatedTo(INavigationParameters parameters)
         {
             switch (parameters.GetNavigationMode())
             {

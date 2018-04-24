@@ -73,11 +73,11 @@ namespace AppCenter.DemoApp.ViewModels
 
         #region INavigationAware
 
-        public virtual void OnNavigatingTo(NavigationParameters parameters) { }
+        public virtual void OnNavigatingTo(INavigationParameters parameters) { }
 
-        public virtual void OnNavigatedTo(NavigationParameters parameters) { }
+        public virtual void OnNavigatedTo(INavigationParameters parameters) { }
 
-        public virtual void OnNavigatedFrom(NavigationParameters parameters) { }
+        public virtual void OnNavigatedFrom(INavigationParameters parameters) { }
 
         #endregion INavigationAware
 
@@ -89,9 +89,9 @@ namespace AppCenter.DemoApp.ViewModels
 
         #region IConfirmNavigation
 
-        public virtual bool CanNavigate(NavigationParameters parameters) => true;
+        public virtual bool CanNavigate(INavigationParameters parameters) => true;
 
-        public virtual Task<bool> CanNavigateAsync(NavigationParameters parameters) =>
+        public virtual Task<bool> CanNavigateAsync(INavigationParameters parameters) =>
             Task.FromResult(CanNavigate(parameters));
 
         #endregion IConfirmNavigation
