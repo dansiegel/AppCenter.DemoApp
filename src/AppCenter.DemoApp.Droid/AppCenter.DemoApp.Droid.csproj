@@ -96,9 +96,9 @@
       <Version>2.3.6</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>3.0.0.354232-pre3</Version>
+      <Version>3.0.0.427558-pre4</Version>
     </PackageReference>
-    <PackageReference Include="Mobile.BuildTools" Version="1.2.0.554" PrivateAssets="all" />
+    <PackageReference Include="Mobile.BuildTools" Version="1.2.1.558" PrivateAssets="all" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

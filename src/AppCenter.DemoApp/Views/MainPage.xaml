@@ -8,7 +8,12 @@
              xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
              Title="{Binding Title}"
              x:Class="AppCenter.DemoApp.Views.MainPage">
-
-    <!-- TODO: // Add Some Content -->
+    <ContentPage.Resources>
+        <StyleSheet Source="../Theme/style.css" />
+    </ContentPage.Resources>
+    <StackLayout HorizontalOptions="Center"
+                 VerticalOptions="Center">
+        <Button Text="Press Me" />
+    </StackLayout>
 
 </ContentPage>
