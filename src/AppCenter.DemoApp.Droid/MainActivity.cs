@@ -28,7 +28,7 @@ namespace AppCenter.DemoApp.Droid
             global::Rg.Plugins.Popup.Popup.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.SetFlags("FastRenderers_Experimental");
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            global::FFImageLoading.Forms.Droid.CachedImageRenderer.Init(enableFastRenderer: true);
+            global::FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
             global::FFImageLoading.ImageService.Instance.Initialize(new FFImageLoading.Config.Configuration()
             {
                 Logger = new AppCenter.DemoApp.Services.DebugLogger()
