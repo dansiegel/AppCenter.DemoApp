@@ -1,0 +1,9 @@
+@import "colors";
+
+button:all {
+    background-color: $primaryColor;
+    border-color: $primaryDarkColor;
+    border-radius: 15px;
+    color: $navigationTextColor;
+    width: 120
+}
