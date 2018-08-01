@@ -6,6 +6,7 @@ using Prism;
 using Prism.AppModel;
 using Prism.Navigation;
 using Prism.Services;
+using Prism.Logging;
 
 namespace AppCenter.DemoApp.ViewModels
 {
@@ -13,15 +14,15 @@ namespace AppCenter.DemoApp.ViewModels
     {
         protected IPageDialogService _pageDialogService { get; }
 
-        protected IDeviceService _deviceService { get; }
+        protected ILogger _logger { get; }
 
         protected INavigationService _navigationService { get; }
 
         public ViewModelBase(INavigationService navigationService, IPageDialogService pageDialogService,
-                             IDeviceService deviceService)
+                             ILogger logger)
         {
             _pageDialogService = pageDialogService;
-            _deviceService = deviceService;
+            _logger = logger;
             _navigationService = navigationService;
         }
 

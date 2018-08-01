@@ -1,25 +1,25 @@
 ﻿using System;
 using System.Threading.Tasks;
+using AppCenter.DemoApp.Helpers;
 using AppCenter.DemoApp.Resources;
 using AppCenter.DemoApp.Services;
 using AppCenter.DemoApp.Views;
-using Plugin.Multilingual;
-using Prism;
-using Prism.Ioc;
-using Prism.Plugin.Popups;
 using DryIoc;
-using Prism.DryIoc;
-using AppCenter.DemoApp.Helpers;
+using FFImageLoading;
 using FFImageLoading.Helpers;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Microsoft.AppCenter.Distribute;
 using Microsoft.AppCenter.Push;
+using Plugin.Multilingual;
+using Prism;
+using Prism.DryIoc;
+using Prism.Ioc;
 using Prism.Logging;
+using Prism.Logging.AppCenter;
+using Prism.Plugin.Popups;
 using Xamarin.Forms;
-
-using DebugLogger = AppCenter.DemoApp.Services.DebugLogger;
 
 namespace AppCenter.DemoApp
 {
@@ -39,14 +39,6 @@ namespace AppCenter.DemoApp
         public App(IPlatformInitializer initializer)
             : base(initializer)
         {
-            // https://docs.microsoft.com/en-us/mobile-center/sdk/distribute/xamarin
-            Distribute.ReleaseAvailable = OnReleaseAvailable;
-            // https://docs.microsoft.com/en-us/mobile-center/sdk/push/xamarin-forms
-            Push.PushNotificationReceived += OnPushNotificationReceived;
-            // Handle when your app starts
-            Microsoft.AppCenter.AppCenter.Start(AppConstants.AppCenterStart,
-                               typeof(Analytics), typeof(Crashes), typeof(Distribute), typeof(Push));
-            Container.Resolve<ILoggerFacade>().Log("Started AppCenter", Category.Info, Priority.Low);
         }
 
         protected override async void OnInitialized()
@@ -54,16 +46,26 @@ namespace AppCenter.DemoApp
             InitializeComponent();
             LogUnobservedTaskExceptions();
             AppResources.Culture = CrossMultilingual.Current.DeviceCultureInfo;
+            // https://docs.microsoft.com/en-us/mobile-center/sdk/distribute/xamarin
+            Distribute.ReleaseAvailable = OnReleaseAvailable;
+            // https://docs.microsoft.com/en-us/mobile-center/sdk/push/xamarin-forms
+            Push.PushNotificationReceived += OnPushNotificationReceived;
+            // Handle when your app starts
+            Microsoft.AppCenter.AppCenter.Start(AppConstants.AppCenterStart,
+                                                typeof(Analytics), typeof(Crashes), typeof(Distribute), typeof(Push));
+            Container.Resolve<ILogger>().Log("Started App Center");
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            var result = await NavigationService.NavigateAsync("/NavigationPage/MainPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             // Register the Popup Plugin Navigation Service
             containerRegistry.RegisterPopupNavigationService();
-            containerRegistry.RegisterInstance(CreateLogger());
-
+            var logger = new AppCenterLogger();
+            containerRegistry.RegisterInstance<ILogger>(logger);
+            containerRegistry.RegisterInstance<ILoggerFacade>(logger);
+            containerRegistry.RegisterSingleton<IMiniLogger, FFImageLoadingLogger>();
 
             // Navigating to "TabbedPage?createTab=ViewA&createTab=ViewB&createTab=ViewC will generate a TabbedPage
             // with three tabs for ViewA, ViewB, & ViewC
@@ -75,62 +77,14 @@ namespace AppCenter.DemoApp
 
         protected override async void OnStart()
         {
-            // Handle when your app starts
-            if (await Analytics.IsEnabledAsync())
-            {
-                System.Diagnostics.Debug.WriteLine("Analytics is enabled");
-                FFImageLoading.ImageService.Instance.Config.Logger = (IMiniLogger)Container.Resolve<ILoggerFacade>();
-            }
-            else
-            {
-                System.Diagnostics.Debug.WriteLine("Analytics is disabled");
-            }
-        }
-
-        protected override void OnSleep()
-        {
-            // Handle IApplicationLifecycle
-            base.OnSleep();
-
-            // Handle when your app sleeps
-        }
-
-        protected override void OnResume()
-        {
-            // Handle IApplicationLifecycle
-            base.OnResume();
-
-            // Handle when your app resumes
-        }
-
-        private ILoggerFacade CreateLogger()
-        {
-            switch (Xamarin.Forms.Device.RuntimePlatform)
-            {
-                case "Android":
-                    if (!string.IsNullOrWhiteSpace(Secrets.AppCenter_Android_Secret))
-                        return CreateAppCenterLogger();
-                    break;
-                case "iOS":
-                    if (!string.IsNullOrWhiteSpace(Secrets.AppCenter_iOS_Secret))
-                        return CreateAppCenterLogger();
-                    break;
-            }
-            return new DebugLogger();
-        }
-
-        private ACAnalyticsLogger CreateAppCenterLogger()
-        {
-            var logger = new ACAnalyticsLogger();
-            FFImageLoading.ImageService.Instance.Config.Logger = (IMiniLogger)logger;
-            return logger;
+            ImageService.Instance.Config.Logger = Container.Resolve<IMiniLogger>();
         }
 
         private void LogUnobservedTaskExceptions()
         {
             TaskScheduler.UnobservedTaskException += (sender, e) =>
             {
-                Container.Resolve<ILoggerFacade>().Log(e.Exception.ToString(), Category.Exception, Priority.High);
+                Container.Resolve<ILogger>().Report(e.Exception);
             };
         }
 
