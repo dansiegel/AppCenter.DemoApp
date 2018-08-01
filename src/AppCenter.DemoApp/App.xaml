@@ -10,7 +10,7 @@
         <!-- Application resource dictionary -->
         <ResourceDictionary>
             <!-- See https://material.io/color for more help choosing a Material Design Color scheme -->
-            <Color x:Key="Primary">#78909c</Color>
+            <Color x:Key="Primary">#DB0068</Color>
             <Color x:Key="PrimaryDark">#4b636e</Color>
             <Color x:Key="PrimaryDarkTranslucent">#9926213C</Color>
             <Color x:Key="Accent">#a7c0cd</Color>
