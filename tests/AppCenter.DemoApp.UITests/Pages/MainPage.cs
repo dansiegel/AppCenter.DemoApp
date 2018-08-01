@@ -10,9 +10,6 @@ namespace AppCenter.DemoApp.UITests.Pages
     {
         public void AppStarted()
         {
-            AppResult[] results = app.WaitForElement(c => c.Marked("Item1"));
-            AppResult[] results2 = app.WaitForElement(c => c.Marked("Item2"));
-            AppResult[] results3 = app.WaitForElement(c => c.Marked("Item3"));
             app.Screenshot("Main Page");
         }
     }

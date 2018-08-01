@@ -3,7 +3,8 @@
 button:all {
     background-color: $primaryColor;
     border-color: $primaryDarkColor;
-    border-radius: 15px;
+    border-radius: 15;
     color: $navigationTextColor;
-    width: 150px
+    width: 300;
+    min-width: 300;
 }

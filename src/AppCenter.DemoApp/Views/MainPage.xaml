@@ -4,8 +4,8 @@
              xmlns:behaviors="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              xmlns:i18n="clr-namespace:AppCenter.DemoApp.i18n;assembly=AppCenter.DemoApp"
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
-             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
-             xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
+             ios:NavigationPage.PrefersLargeTitles="true"
+             ios:Page.UseSafeArea="true"
              Title="{Binding Title}"
              x:Class="AppCenter.DemoApp.Views.MainPage">
     <ContentPage.Resources>
@@ -13,7 +13,9 @@
     </ContentPage.Resources>
     <StackLayout HorizontalOptions="Center"
                  VerticalOptions="Center">
-        <Button Text="Press Me" />
+        <Button Text="Press Me"
+                AutomationId="PressMeButton"
+                Command="{Binding PressMeCommand}"/>
     </StackLayout>
 
 </ContentPage>

@@ -19,10 +19,14 @@ namespace AppCenter.DemoApp.ViewModels
             : base(navigationService, pageDialogService, logger)
         {
             Title = AppResources.MainPageTitle;
+            PressMeCommand = new DelegateCommand(OnPressMeCommandExecuted);
         }
 
+        public DelegateCommand PressMeCommand { get; }
 
+        private void OnPressMeCommandExecuted()
         {
+            _pageDialogService.DisplayAlertAsync("Awesome", "You pressed the button... Isn't that cool?", "Ok");
         }
     }
 }
