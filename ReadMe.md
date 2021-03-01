@@ -1,5 +1,7 @@
 # AppCenter.DemoApp
 
+> **NOTE** This repo targets the legacy v1.4 build of the Mobile.BuildTools. While this is still used without issue by thousands of apps, v1.4 is no longer supported. Please see the sample apps in the [Mobile.BuildTools](https://github.com/dansiegel/Mobile.BuildTools) repo and the docs for how to use v2.0 at [mobilebuildtools.com](https://mobilebuildtools.com).
+
 This project was created using the Prism Template Studio & Developer Toolkit by Dan Siegel. Be sure to follow Dan on Twitter [@DanJSiegel](https://twitter.com/DanJSiegel). This app is meant as a demo to show how to secure your application code. You will notice that there is no `Info.plist` or `AndroidManifest.xml` in the iOS and Android projects. Both of these files instead exist as tokenized templates in the build folder. There are also no hard coded values for the AppCenter application secrets.
 
 The [Mobile.BuildTools](https://github.com/dansiegel/Mobile.BuildTools) is able to handle these tasks easily for you. This project is using all of the defaults, however it is all configurable and customizable to allow you to inject secrets at build across multiple projects in a single solution, enable debugging output, and more.
